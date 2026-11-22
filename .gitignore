@@ -1,0 +1,18 @@
+# Секрети та локальні дані (НІКОЛИ не публікуй у GitHub)
+.env
+data/
+backups/
+logs/*.log
+*.db
+*.db-wal
+*.db-shm
+*.db-journal
+
+# Службові файли
+venv/
+.venv/
+.vs/
+.vscode/
+__pycache__/
+*.pyc
+*.zip

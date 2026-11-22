@@ -1,0 +1,14 @@
+# Налаштування Litestream: постійна копія бази SQLite в Cloudflare R2.
+# Значення беруться зі змінних середовища (їх задають у Render).
+# Ключі доступу Litestream бере зі змінних LITESTREAM_ACCESS_KEY_ID та LITESTREAM_SECRET_ACCESS_KEY.
+dbs:
+  - path: ${DB_PATH}
+    replicas:
+      - type: s3
+        bucket: ${LITESTREAM_BUCKET}
+        path: ${LITESTREAM_PATH}
+        endpoint: ${LITESTREAM_ENDPOINT}
+        region: auto
+        sync-interval: 5s
+        snapshot-interval: 6h
+        retention: 72h
